@@ -25,4 +25,9 @@ public class PropertyService {
 		return propertyRepository.getAllProperties(location);
 	}
 
+	public List<Property> getProperties() {
+		// TODO Auto-generated method stub
+		return propertyRepository.findAll();
+	}
+
 }

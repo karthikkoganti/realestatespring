@@ -36,6 +36,13 @@ public class PropertyController {
 		
 	}
 	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/properties")
+	public List<Property> getProperties(){
+		return propertyService.getProperties();
+	}
+	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/location")
 	public List<Property> getAllProperties(@RequestBody String location) {
 		//log.info(" inside get all products method in ProductServices");

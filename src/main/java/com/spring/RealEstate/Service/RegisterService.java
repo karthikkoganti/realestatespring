@@ -16,11 +16,12 @@ public class RegisterService {
     }
     public Register Register(Register register) {
         Register register1 = new Register();
-        register1.setSlno(register.getSlno());
+       
         register1.setPackages(register.getPackages());
         register1.setEmail(register.getEmail());
         register1.setUsername(register.getUsername());
-        register1.setPassword(passwordEncoder.encode(register.getUsername()));
+        register1.setPhone(register.getPhone());
+        register1.setPassword(passwordEncoder.encode(register.getPassword()));
         return registerRepository.save(register1);
     }
 

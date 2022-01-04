@@ -32,6 +32,7 @@ public class Property {
 	private String beds;
 	private String baths;
 	private String garages;
+	private String image;
 
 }
 
