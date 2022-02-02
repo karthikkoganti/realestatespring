@@ -21,8 +21,8 @@ public class Rating {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long slno;
-	private String Rate;
-	private String Comment;
+	private String rate;
+	private String comment;
 	private Long id;
 
 }

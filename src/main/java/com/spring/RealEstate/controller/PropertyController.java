@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,10 +50,25 @@ public class PropertyController {
 		return propertyService.getAllProperties(location);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/save/{id}")
 	public Rating saveRating(@PathVariable("id") Long id, @RequestBody Rating rating) {
 		return ratingService.saveRating(id, rating);
 	}
+	
+	@DeleteMapping("/{id}")
+	@CrossOrigin(origins = "*")
+	public String deleteAProperty(@PathVariable("id") Long id) {
+		//log.info(" inside deleteAProduct method in Product controller");
+		return propertyService.deleteAProduct(id);
+	}
+	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/getproperty/{id}")
+    public Property getProperty(@PathVariable("id") Long id)
+    {
+    	return propertyService.getProperty(id);
+    }
 
 }
 
